@@ -236,11 +236,11 @@ function App() {
           </motion.h2>
 
           {/* Technical Workflow Illustration */}
-          <div className="w-[100%] mx-auto mb-16 flex flex-col items-center justify-center">
+          <div className="w-full max-w-[1200px] mx-auto mb-16 flex flex-col items-center justify-center">
             <img
-              src="/tech.png"
+              src="/tech.jpg"
               alt="Technical Workflow"
-              className="w-full max-w-4xl object-contain mb-4"
+              className="w-full h-auto max-h-[80vh] object-contain"
             />
             <p className="text-lg text-indigo-700 font-medium text-center">
               Image-to-Print Pipeline
@@ -327,6 +327,7 @@ function App() {
             Design Showcase
           </motion.h2>
 
+          {/* Small Thumbnails */}
           <motion.div
             variants={fadeInUp}
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12"
@@ -336,13 +337,18 @@ function App() {
                 key={i}
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="w-full h-[40vh] border border-gray-200 rounded-lg bg-gray-100 flex items-center justify-center"
+                className="w-full h-[40vh] border border-gray-200 rounded-lg bg-gray-100 flex items-center justify-center overflow-hidden"
               >
-                <p className="text-gray-400">Result Thumbnail {i + 1}</p>
+                <img
+                  src={`/art${i + 1}.png`}
+                  alt={`Thumbnail ${i + 1}`}
+                  className="w-full h-full object-cover"
+                />
               </motion.div>
             ))}
           </motion.div>
 
+          {/* Big Highlighted Images */}
           <motion.div
             variants={fadeInUp}
             className="grid grid-cols-1 lg:grid-cols-2 gap-8"
@@ -352,9 +358,13 @@ function App() {
                 key={i}
                 whileHover={{ scale: 1.03 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="w-full h-[80vh] border border-gray-200 rounded-lg bg-gray-100 flex items-center justify-center"
+                className="w-full h-[80vh] border border-gray-200 rounded-lg bg-gray-100 flex items-center justify-center overflow-hidden"
               >
-                <p className="text-gray-400 text-lg">Highlighted Image {i}</p>
+                <img
+                  src={`/bigart${i}.jpg`}
+                  alt={`Highlighted Image ${i}`}
+                  className="w-full h-full object-cover"
+                />
               </motion.div>
             ))}
           </motion.div>
