@@ -57,7 +57,7 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
           >
-            Printable 3D Voxel Art
+            Printable Voxel Arts
           </motion.p>
 
           {/* Research Statement */}
@@ -364,6 +364,51 @@ function App() {
                   src={`/bigart${i}.jpg`}
                   alt={`Highlighted Image ${i}`}
                   className="w-full h-full object-cover"
+                />
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.section>
+
+        {/* Future Development Section */}
+        <motion.section
+          id="framework"
+          className="w-[90%] mx-auto py-20"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ staggerChildren: 0.2 }}
+        >
+          <motion.h2
+            variants={fadeInUp}
+            className="text-3xl font-semibold text-indigo-700 mb-4 text-center"
+          >
+            Interaction Prototypes
+          </motion.h2>
+          <motion.p
+            variants={fadeInUp}
+            className="text-md text-gray-600 text-center max-w-3xl mx-auto mb-12"
+          >
+            A glimpse into our envisioned interaction framework, showcasing
+            modular UI/UX patterns that could support future real-time voxel
+            editing and user engagement.
+          </motion.p>
+
+          <motion.div
+            variants={fadeInUp}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          >
+            {[...Array(8)].map((_, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="w-full h-[40vh] border border-gray-200 rounded-lg bg-gray-100 flex items-center justify-center overflow-hidden"
+              >
+                <img
+                  src={`/Frame${i + 1}.png`}
+                  alt={`Framework Thumbnail ${i + 1}`}
+                  className="max-w-[90%] max-h-[90%] object-contain"
                 />
               </motion.div>
             ))}
