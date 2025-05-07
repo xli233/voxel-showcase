@@ -57,7 +57,7 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
           >
-            Turn 2D Images into 3D Printable Voxels
+            Printable 3D Voxel Art
           </motion.p>
 
           {/* Research Statement */}
@@ -91,9 +91,14 @@ function App() {
             animate={{ opacity: 1 }}
             transition={{ delay: 2, duration: 2 }}
           >
-            <p className="text-xl text-gray-500">
-              🔧 Video demo coming soon...
-            </p>
+            <video
+              src="/gif.mp4"
+              className="w-full h-full object-cover rounded-lg"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
           </motion.div>
         </motion.section>
 
@@ -115,70 +120,98 @@ function App() {
 
         {/* Image Grid with Descriptions */}
         <motion.div
-          className="w-[90%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pt-12"
+          className="w-[90%] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-10 pt-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 3, duration: 0.8 }}
         >
           {/* Card 1 */}
           <div className="flex flex-col items-center text-center">
-            <div className="w-full h-[40vh] border border-gray-200 rounded-lg overflow-hidden mb-4">
-              <img
-                src="/voxel.jpg"
-                alt="Voxel Example"
-                className="w-full h-full object-cover"
-              />
+            <div className="w-full flex justify-center mb-4">
+              <div className="w-full aspect-[1/1] scale-[.6] border border-gray-200 rounded-lg overflow-hidden">
+                <img
+                  src="/card1.jpg"
+                  alt="Voxel Example"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
-            <p className="text-sm text-indigo-600 font-semibold mb-2">
-              1. Lack of Structured Image-to-Voxel Creation
+            <p className="text-base text-indigo-600 font-semibold mb-2">
+              1. Minimal Control in Existing Voxel Generators
             </p>
             <p className="text-sm text-gray-600 px-2">
-              Most tools convert 2D images into surface meshes or reliefs, but
-              few generate true volumetric voxel models with spatial depth. This
-              limits both structural integrity and creative reinterpretation in
-              3D printing workflows.
+              Current voxel tools offer limited parameters, often producing
+              fixed results with minimal user intervention. Our system allows
+              real-time adjustments of resolution, voxel size, and depth
+              mapping—turning passive image conversion into an active design
+              process.
             </p>
           </div>
 
           {/* Card 2 */}
           <div className="flex flex-col items-center text-center">
-            <div className="w-full h-[40vh] border border-gray-200 rounded-lg bg-gray-100 mb-4" />
-            <p className="text-sm text-indigo-600 font-semibold mb-1">
-              2. Minimal Control in Existing Voxel Generators
+            <div className="w-full flex justify-center mb-4">
+              <div className="w-full aspect-[1/1] scale-[.6] border border-gray-200 rounded-lg overflow-hidden">
+                <img
+                  src="/card2.jpg"
+                  alt="Voxel Preview"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <p className="text-base text-indigo-600 font-semibold mb-2">
+              2. Disjointed Path from Creation to Fabrication
             </p>
-            <p className="text-sm text-gray-600">
-              Current voxel tools offer limited parameters, often producing
-              fixed results with minimal user intervention. Our system allows
-              real-time adjustments of resolution, voxel size, and depth
-              logic—turning passive conversion into active design.
+            <p className="text-sm text-gray-600 px-2">
+              Translating voxel art into 3D-printable objects typically requires
+              external software and manual formatting. Our tool streamlines this
+              pipeline by generating fabrication-ready voxel models in a single
+              interface, removing unnecessary technical barriers.
             </p>
           </div>
 
           {/* Card 3 */}
           <div className="flex flex-col items-center text-center">
-            <div className="w-full h-[40vh] border border-gray-200 rounded-lg bg-gray-100 mb-4" />
-            <p className="text-sm text-indigo-600 font-semibold mb-1">
-              3. Disjointed Path from Creation to Fabrication
+            <div className="w-full flex justify-center mb-4">
+              <div className="w-full aspect-[1/1] scale-[.6] border border-gray-200 rounded-lg overflow-hidden">
+                <img
+                  src="/card3.jpg"
+                  alt="Voxel Preview"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <p className="text-base text-indigo-600 font-semibold mb-2">
+              3. Missing Creative Transformation from 2D to 3D Voxel
             </p>
-            <p className="text-sm text-gray-600">
-              Translating voxel art into 3D-printable objects typically requires
-              external software and format handling. Our tool simplifies this
-              pipeline by generating fabrication-ready voxel models within a
-              single interface.
+            <p className="text-sm text-gray-600 px-2">
+              Most workflows treat 2D-to-3D as a neutral data conversion, losing
+              the potential for expressive form-making. We introduce interactive
+              controls—depth scaling, color-based filtering, and inversion—to
+              transform flat visuals into customizable, spatially rich 3D voxel
+              structures.
             </p>
           </div>
 
           {/* Card 4 */}
           <div className="flex flex-col items-center text-center">
-            <div className="w-full h-[40vh] border border-gray-200 rounded-lg bg-gray-100 mb-4" />
-            <p className="text-sm text-indigo-600 font-semibold mb-1">
-              4. Missing Visual Expressiveness in Voxel Workflows
+            <div className="w-full flex justify-center mb-4">
+              <div className="w-full aspect-[1/1] scale-[.6] border border-gray-200 rounded-lg overflow-hidden">
+                <img
+                  src="/voxel.jpg"
+                  alt="Voxel Preview"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <p className="text-base text-indigo-600 font-semibold mb-2">
+              4. Lack of Structured Image-to-Voxel Creation
             </p>
-            <p className="text-sm text-gray-600">
-              Voxel-based platforms rarely support creative expression through
-              visual manipulation. We introduce interactive controls for depth
-              scaling, color-based filtering, and spatial inversion—enabling
-              users to shape both form and aesthetic.
+            <p className="text-sm text-gray-600 px-2">
+              Many tools generate surface meshes or reliefs from 2D images, but
+              few create true volumetric voxel forms. Our method produces solid,
+              structured voxel grids—ready for design iteration and 3D
+              printing—making the image-to-structure logic fully spatial.
             </p>
           </div>
         </motion.div>
@@ -202,29 +235,53 @@ function App() {
             Methodology
           </motion.h2>
 
+          {/* Technical Workflow Illustration */}
+          <div className="w-[100%] mx-auto mb-16 flex flex-col items-center justify-center">
+            <img
+              src="/tech.png"
+              alt="Technical Workflow"
+              className="w-full max-w-4xl object-contain mb-4"
+            />
+            <p className="text-lg text-indigo-700 font-medium text-center">
+              Image-to-Print Pipeline
+            </p>
+          </div>
+
           <div className="space-y-12">
             {[
               {
-                title: "Step 1: Input Preprocessing",
-                desc: "We begin by collecting 2D sectional inputs and converting them into normalized grayscale images. The system aligns and standardizes resolution before feature extraction.",
-                placeholder: "Image or Diagram 1",
+                title: "Step 1: Image Upload and Optimization",
+                desc: "We begin by uploading a 2D image. We use Random Reduction to lower voxel density and Voxel Size to adjust resolution. By clicking Clear Background, we automatically remove the most common background color.",
+                video: "/step1.mp4",
                 reverse: false,
               },
               {
-                title: "Step 2: Diffusion-based Generation",
-                desc: "A fine-tuned latent diffusion model generates voxel-based 3D forms using the preprocessed inputs. LoRA and ControlNet modules guide the generation toward architectural logic and continuity.",
-                placeholder: "Image or Diagram 2",
+                title: "Step 2: Depth Transformation",
+                desc: "We control vertical extrusion using Depth Scale and toggle Invert Depth to reverse depth direction. Fill Extruded Voxels generates closed geometry by extruding voxels from the center point. We click Recalculate Depths to regenerate voxel heights using selected Depth Modes like Brightness, Hue, or RGB channels.",
+                video: "/step2.mp4",
                 reverse: true,
               },
               {
-                title: "Step 3: 3D Reconstruction",
-                desc: "The voxel field is reconstructed into high-resolution 3D models using Marching Cubes algorithm. Models can be exported as meshes for further spatial analysis or fabrication.",
-                placeholder: "Image or Diagram 3",
+                title: "Step 3: Color-Based Depth Mapping",
+                desc: "We estimate depth through image processing techniques that analyze RGB and HSV color channels. Each Depth Mode reflects how different color dimensions influence perceived depth.",
+                video: "/step3.mp4",
+                reverse: false,
+              },
+              {
+                title: "Step 4: Voxel Selection and Editing",
+                desc: "We click on a voxel to select others with similar colors. By adjusting the Selection Threshold, we control the range of selected voxels. We can apply a new color palette, delete voxels, or manage edits using Undo and Redo.",
+                video: "/step4.mp4",
+                reverse: true,
+              },
+              {
+                title: "Step 5: Export",
+                desc: "Finally, we export the voxel model as .OBJ and .MTL files. Our output is compatible with modeling software like Rhino, Blender, and more.",
+                video: "/step5.mp4",
                 reverse: false,
               },
             ].map((step, i) => (
               <motion.div
-                key={i}
+                key={`step-${i}`}
                 variants={{
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0 },
@@ -233,8 +290,15 @@ function App() {
                   step.reverse ? "lg:flex-row-reverse" : "lg:flex-row"
                 } items-center gap-8`}
               >
-                <div className="w-full lg:w-1/2 h-[30vh] bg-gray-100 rounded-lg border border-gray-200 flex items-center justify-center">
-                  <p className="text-gray-400">{step.placeholder}</p>
+                <div className="w-full lg:w-1/2 h-[40vh] bg-gray-100 rounded-lg border border-gray-200 overflow-hidden">
+                  <video
+                    src={step.video}
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
                 </div>
                 <div className="w-full lg:w-1/2">
                   <h3 className="text-xl font-semibold text-indigo-600 mb-2">
